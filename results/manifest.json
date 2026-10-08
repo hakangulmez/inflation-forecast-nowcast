@@ -1,0 +1,35 @@
+{
+  "analysis_id": "7e0690939f7aa91d",
+  "seed": 20261007,
+  "quick": false,
+  "code": {
+    "src/inflation_forecast_nowcast/access.py": "1a81d030d9a2920ffeb7e486c1d5a3cc88a0c620d4a3581ab29a71ffaa46557b",
+    "src/inflation_forecast_nowcast/__init__.py": "ef84dd5df0064511d765eb30090ae8e9cc91d0d2cb0957a6a95ec40c679d75c5",
+    "src/inflation_forecast_nowcast/core.py": "a4e1475eebd0aff2f3f682782aed0127036bab325803c8629ed7336040e7d936",
+    "src/inflation_forecast_nowcast/runtime.py": "eb36556962eed80eb1e4fdc342fc1dc8079f4c63609dcbb7d69290d1f6716731",
+    "src/inflation_forecast_nowcast/sources.py": "ac8f648209c4d20f8b7e4a45c6d2dfc2e58aa5d0b6682a35b864992aff92cbba",
+    "src/inflation_forecast_nowcast/pipeline.py": "d0abf53cc65e7492bd21ab0b4490f528395d4f72701911b994542fd69be86329",
+    "src/inflation_forecast_nowcast/viz.py": "cca03befc9ffa62893656fbc739ec77448b0682205ea9c3a0403251d7a0f1654"
+  },
+  "input_sha256": {
+    "tr_unemployment": "940c8f8a15a528eb63734cc9bca01e49d05ce7b75a42eb2980b62a12856e7f9c",
+    "ip": "cde2ecaf47fcde4b6869691360e35871ad50246ba112e3bc4c835bbe70327780",
+    "ea_unemployment": "5d57bf950836f7d8d6c2753ace2703e16c1c2a88745bf55c83bae66a06e2a546",
+    "de_gdp": "02777e48ca2dccbe38170b9383caec1deea2c425308bc9915c13762d208332bb",
+    "ea_core": "bb2c61d14ed63f592fc37a609a09c31c936c0596e4ae67e24a76d37c56f0eb5d",
+    "retail": "c9e3934cb57b4d787a902de4d5619831066b21aa4cb20a5fa5ab0a07989a6d1a",
+    "tr_headline": "095d755658eb914d253110f86b313e714d01adc51684f6fd62438981b7c9cd9d",
+    "esi": "8e158db40471acc7d3e0ca0d5e300c781e3643c34923d7d5df3e882b95c4f3f6",
+    "unemployment": "5692a55f3e126d8ef80a91f8ba73f7d006cfe09671a6d4f5f9a3b7c8708a6ffd",
+    "ea_headline": "7916bf2b440945993cc823446c1cf1d2f71eea186181b357fc59b426898469d1"
+  },
+  "elapsed_seconds": 34.839002625027206,
+  "paid_calls": 0,
+  "forecast_rows": 10080,
+  "nowcast_rows": 696,
+  "failures": [],
+  "dfm_converged": 224,
+  "dfm_total": 232,
+  "information": "Latest vintage; simulated fixed publication lags; no interpolation",
+  "scope": "minimum models and all three nowcast methods; conditional evaluation bootstrap"
+}

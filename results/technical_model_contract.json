@@ -1,0 +1,51 @@
+{
+  "kind": "implementation metadata; no estimation",
+  "source": [
+    {
+      "path": "src/inflation_forecast_nowcast/core.py",
+      "sha256": "dd5a4f44809f655663028af05ed6645a98ca6008aea9efb4761444d4ce324ba9"
+    },
+    {
+      "path": "src/inflation_forecast_nowcast/pipeline.py",
+      "sha256": "d0abf53cc65e7492bd21ab0b4490f528395d4f72701911b994542fd69be86329"
+    },
+    {
+      "path": "src/inflation_forecast_nowcast/v3.py",
+      "sha256": "a72d706e2ccbda7a5efd2915c2333b4a4b3c42b32a5c29d88b456bd9716b43be"
+    }
+  ],
+  "ar": {
+    "maxlag": 12
+  },
+  "bvar": {
+    "p": 12,
+    "own": 0.2,
+    "cross": 0.1
+  },
+  "error_scores": {
+    "seed": 20261007,
+    "draws": 499,
+    "block": 12
+  },
+  "dfm": {
+    "maxiter": 100,
+    "disp": false,
+    "tolerance": 1e-05
+  },
+  "direct_forecast": {
+    "p": 12,
+    "alpha": 0.05,
+    "max_iter": 10000
+  },
+  "bridge_predict": {
+    "ridge": 0.01
+  },
+  "v3_calendar": {
+    "origin": "month end",
+    "prices": 1,
+    "unemployment": 2,
+    "HAC": "h+11, inclusive",
+    "ensemble": "unchanged"
+  },
+  "v3_executed_source_ledger": "runs/v3_executed_sources/manifest.json; private, not redistributed"
+}

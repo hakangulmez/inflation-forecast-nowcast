@@ -1,0 +1,11 @@
+Variable,Source / exact ID and selectors,Transform,Source coverage
+EA headline prices,Eurostat: prc_hicp_minr; unit=I25; coicop18=TOTAL; geo=EA21,100(P/P lag12 – 1); secondary 100 Δlog,1999-12 / 2026-09
+EA core prices,Eurostat: prc_hicp_minr; unit=I25; coicop18=TOT_X_NRG_FOOD; geo=EA21,Same price transforms,1999-12 / 2026-09
+EA unemployment,Eurostat: une_rt_m; s_adj=SA; age=TOTAL; unit=PC_ACT; sex=T; geo=EA21,"Level, percent",2000-01 / 2026-08
+DE real GDP,Eurostat: namq_10_gdp; unit=CLV_I20; s_adj=SCA; na_item=B1GQ; geo=DE,"100 Δlog; q/q, not annualised",1999Q1 / 2026Q2
+DE production,Eurostat: sts_inpr_m; indic_bt=PRD; nace_r2=B-D; s_adj=SCA; unit=I21; geo=DE,100 Δlog; m/m,1999-01 / 2026-07
+DE retail volume,Eurostat: sts_trtu_m; indic_bt=VOL_SLS; nace_r2=G47; s_adj=SCA; unit=I21; geo=DE,100 Δlog; m/m,1999-01 / 2026-08
+DE unemployment,Eurostat: une_rt_m; s_adj=SA; age=TOTAL; unit=PC_ACT; sex=T; geo=DE,"First difference, pp",1999-01 / 2026-08
+DE sentiment,Eurostat: ei_bssi_m_r2; s_adj=SA; indic=BS-ESI-I; geo=DE,Level index,1999-01 / 2026-09
+TR headline prices,EVDS: TP.TUKFIY2025.GENEL,Same price transforms,2005-01 / 2026-09
+TR unemployment,EVDS: TP.TIG08,"Level, percent",2005-01 / 2026-08

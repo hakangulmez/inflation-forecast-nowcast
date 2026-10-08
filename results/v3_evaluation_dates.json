@@ -1,0 +1,230 @@
+[
+  {
+    "target": "ea_core",
+    "horizon": 1,
+    "first": "2015-01",
+    "last": "2026-08",
+    "n": 140,
+    "candidate_n": 140,
+    "excluded_dates": [],
+    "missing_by_model": {
+      "RW": [],
+      "AO": [],
+      "AR": [],
+      "BVAR": [],
+      "Phillips": [],
+      "LASSO": [],
+      "Ensemble": [],
+      "SeasonalMean": []
+    }
+  },
+  {
+    "target": "ea_core",
+    "horizon": 3,
+    "first": "2015-01",
+    "last": "2026-08",
+    "n": 140,
+    "candidate_n": 140,
+    "excluded_dates": [],
+    "missing_by_model": {
+      "RW": [],
+      "AO": [],
+      "AR": [],
+      "BVAR": [],
+      "Phillips": [],
+      "LASSO": [],
+      "Ensemble": [],
+      "SeasonalMean": []
+    }
+  },
+  {
+    "target": "ea_core",
+    "horizon": 6,
+    "first": "2015-01",
+    "last": "2026-08",
+    "n": 140,
+    "candidate_n": 140,
+    "excluded_dates": [],
+    "missing_by_model": {
+      "RW": [],
+      "AO": [],
+      "AR": [],
+      "BVAR": [],
+      "Phillips": [],
+      "LASSO": [],
+      "Ensemble": [],
+      "SeasonalMean": []
+    }
+  },
+  {
+    "target": "ea_core",
+    "horizon": 12,
+    "first": "2015-01",
+    "last": "2026-08",
+    "n": 140,
+    "candidate_n": 140,
+    "excluded_dates": [],
+    "missing_by_model": {
+      "RW": [],
+      "AO": [],
+      "AR": [],
+      "BVAR": [],
+      "Phillips": [],
+      "LASSO": [],
+      "Ensemble": [],
+      "SeasonalMean": []
+    }
+  },
+  {
+    "target": "ea_headline",
+    "horizon": 1,
+    "first": "2015-01",
+    "last": "2026-08",
+    "n": 140,
+    "candidate_n": 140,
+    "excluded_dates": [],
+    "missing_by_model": {
+      "RW": [],
+      "AO": [],
+      "AR": [],
+      "BVAR": [],
+      "Phillips": [],
+      "LASSO": [],
+      "Ensemble": [],
+      "SeasonalMean": []
+    }
+  },
+  {
+    "target": "ea_headline",
+    "horizon": 3,
+    "first": "2015-01",
+    "last": "2026-08",
+    "n": 140,
+    "candidate_n": 140,
+    "excluded_dates": [],
+    "missing_by_model": {
+      "RW": [],
+      "AO": [],
+      "AR": [],
+      "BVAR": [],
+      "Phillips": [],
+      "LASSO": [],
+      "Ensemble": [],
+      "SeasonalMean": []
+    }
+  },
+  {
+    "target": "ea_headline",
+    "horizon": 6,
+    "first": "2015-01",
+    "last": "2026-08",
+    "n": 140,
+    "candidate_n": 140,
+    "excluded_dates": [],
+    "missing_by_model": {
+      "RW": [],
+      "AO": [],
+      "AR": [],
+      "BVAR": [],
+      "Phillips": [],
+      "LASSO": [],
+      "Ensemble": [],
+      "SeasonalMean": []
+    }
+  },
+  {
+    "target": "ea_headline",
+    "horizon": 12,
+    "first": "2015-01",
+    "last": "2026-08",
+    "n": 140,
+    "candidate_n": 140,
+    "excluded_dates": [],
+    "missing_by_model": {
+      "RW": [],
+      "AO": [],
+      "AR": [],
+      "BVAR": [],
+      "Phillips": [],
+      "LASSO": [],
+      "Ensemble": [],
+      "SeasonalMean": []
+    }
+  },
+  {
+    "target": "tr_headline",
+    "horizon": 1,
+    "first": "2015-01",
+    "last": "2026-08",
+    "n": 140,
+    "candidate_n": 140,
+    "excluded_dates": [],
+    "missing_by_model": {
+      "RW": [],
+      "AO": [],
+      "AR": [],
+      "BVAR": [],
+      "Phillips": [],
+      "LASSO": [],
+      "Ensemble": [],
+      "SeasonalMean": []
+    }
+  },
+  {
+    "target": "tr_headline",
+    "horizon": 3,
+    "first": "2015-01",
+    "last": "2026-08",
+    "n": 140,
+    "candidate_n": 140,
+    "excluded_dates": [],
+    "missing_by_model": {
+      "RW": [],
+      "AO": [],
+      "AR": [],
+      "BVAR": [],
+      "Phillips": [],
+      "LASSO": [],
+      "Ensemble": [],
+      "SeasonalMean": []
+    }
+  },
+  {
+    "target": "tr_headline",
+    "horizon": 6,
+    "first": "2015-01",
+    "last": "2026-08",
+    "n": 140,
+    "candidate_n": 140,
+    "excluded_dates": [],
+    "missing_by_model": {
+      "RW": [],
+      "AO": [],
+      "AR": [],
+      "BVAR": [],
+      "Phillips": [],
+      "LASSO": [],
+      "Ensemble": [],
+      "SeasonalMean": []
+    }
+  },
+  {
+    "target": "tr_headline",
+    "horizon": 12,
+    "first": "2015-01",
+    "last": "2026-08",
+    "n": 140,
+    "candidate_n": 140,
+    "excluded_dates": [],
+    "missing_by_model": {
+      "RW": [],
+      "AO": [],
+      "AR": [],
+      "BVAR": [],
+      "Phillips": [],
+      "LASSO": [],
+      "Ensemble": [],
+      "SeasonalMean": []
+    }
+  }
+]

@@ -1,0 +1,10 @@
+Alternative,Definition,Status
+Target,Primary y/y; secondary NSA monthly log inflation,Both reported; monthly table secondary
+Benchmark,RW y/y; AO monthly adaptation,Matched forecast errors for both
+Inflation model,"AR, Phillips, LASSO, BVAR, fixed ensemble","All declared methods, all horizons"
+Nowcast method,"Bridge, unrestricted MIDAS, DFM",Fixed information-month masks
+Pandemic window,All quarters; fixed COVID exclusion,Scores retained without refitting
+Convergence,All flagged DFM fits; converged-only matched sample,Failed fits retained in primary scores
+Hyperparameters,Origin-only AR BIC; other fixed settings,No evaluation-based search
+Missing inputs,DFM masking; bridge design-mean replacement,No source interpolation
+Unavailable extensions,Historical-vintage reconstruction; additional model families,Not executed; no invented results

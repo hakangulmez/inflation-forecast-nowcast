@@ -1,0 +1,3 @@
+- With publication delays, EA core BVAR/RW RMSE is 1.077 (90% loss interval 0.999, 1.193) and the EA headline ensemble/RW ratio is 1.071 (0.960, 1.167). These results do not support a general accuracy gain over the random walk.
+- Türkiye deteriorates at h = 12: BVAR/RW RMSE is 2.389 and AR/RW is 1.950. The 2021-23 inflation surge is consistent with difficult regime adaptation, but this comparison does not identify its separate causal contribution.
+- German GDP nowcasts are pandemic-sensitive: month-3 DFM/bridge RMSE is 1.552 (0.778, 1.709) overall and 0.822 (0.702, 0.971) excluding 2020Q1-2021Q2. GDP is q/q log growth, not annualised.

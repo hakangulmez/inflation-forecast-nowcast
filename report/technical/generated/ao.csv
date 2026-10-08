@@ -1,0 +1,19 @@
+Target,h,Model,Rel. RMSE,90% interval,DM p
+EA core,1,RW,1.005,"[0.968, 1.044]",0.832
+EA core,1,BVAR,1.082,"[1.001, 1.205]",0.097
+EA core,1,Ensemble,1.100,"[1.018, 1.161]",0.094
+EA core,12,RW,1.013,"[0.999, 1.038]",0.232
+EA core,12,BVAR,0.940,"[0.814, 1.105]",0.450
+EA core,12,Ensemble,0.981,"[0.800, 1.140]",0.772
+EA headline,1,RW,1.006,"[0.947, 1.077]",0.889
+EA headline,1,BVAR,1.218,"[1.133, 1.378]",0.000
+EA headline,1,Ensemble,1.077,"[1.010, 1.141]",0.079
+EA headline,12,RW,1.020,"[0.998, 1.049]",0.278
+EA headline,12,BVAR,1.004,"[0.877, 1.224]",0.956
+EA headline,12,Ensemble,0.883,"[0.637, 1.106]",0.379
+TR headline,1,RW,0.724,"[0.600, 0.931]",0.104
+TR headline,1,BVAR,1.105,"[0.880, 1.482]",0.491
+TR headline,1,Ensemble,0.880,"[0.736, 1.117]",0.327
+TR headline,12,RW,1.073,"[0.986, 1.441]",0.232
+TR headline,12,BVAR,2.565,"[1.147, 4.903]",0.238
+TR headline,12,Ensemble,1.333,"[1.078, 1.985]",0.189

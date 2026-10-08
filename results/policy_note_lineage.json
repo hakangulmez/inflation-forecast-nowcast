@@ -1,0 +1,8 @@
+{
+  "inputs": {
+    "inflation_scores.csv": "840cb1796586db5c7f73a99fd1b74a6feacd96bf9e51b44e658d1cd8a3a358f5",
+    "nowcast_scores.csv": "a8b82942ab2b95147570a75f083a41621466fa837c43cb34c464278571cff503"
+  },
+  "render_only": true,
+  "estimation": false
+}

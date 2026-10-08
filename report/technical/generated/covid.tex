@@ -1,0 +1,24 @@
+\begin{table}[htbp]
+\centering
+\footnotesize
+\caption{Declared pandemic-window exclusion sensitivity}
+\begin{tabularx}{\linewidth}{XrrrX}
+\toprule
+Model & Info month & n & Rel. RMSE & 90\% interval \\
+\midrule
+Bridge & 1 & 52 & 1.000 & [1.000, 1.000] \\
+Bridge & 2 & 52 & 1.000 & [1.000, 1.000] \\
+Bridge & 3 & 52 & 1.000 & [1.000, 1.000] \\
+Bridge & 4 & 52 & 1.000 & [1.000, 1.000] \\
+DFM & 1 & 52 & 0.846 & [0.789, 0.918] \\
+DFM & 2 & 52 & 0.838 & [0.781, 0.920] \\
+DFM & 3 & 52 & 0.822 & [0.702, 0.971] \\
+DFM & 4 & 52 & 0.743 & [0.583, 1.014] \\
+UMIDAS & 1 & 52 & 1.000 & [1.000, 1.000] \\
+UMIDAS & 2 & 52 & 1.049 & [1.000, 1.113] \\
+UMIDAS & 3 & 52 & 1.115 & [0.992, 1.277] \\
+UMIDAS & 4 & 52 & 0.953 & [0.856, 1.120] \\
+\bottomrule
+\end{tabularx}
+\par\vspace{3pt}\begin{minipage}{\linewidth}\footnotesize Source: results/nowcast\_\allowbreak{}scores.\allowbreak{}csv, exclude\_\allowbreak{}covid=True.\allowbreak{} The source excludes the specified pandemic quarter window; it does not retune any model.\allowbreak{}\end{minipage}
+\end{table}

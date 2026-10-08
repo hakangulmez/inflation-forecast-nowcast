@@ -1,0 +1,41 @@
+{
+  "source_commit_before_documentation": "29465fd4fd07f54361a19be7caf85f1bf2be2ae4",
+  "scope": "Aggregate results, public source code and report build; raw data, observation forecasts, private run artifacts and private Git history excluded.",
+  "source_estimator_hashes": {
+    "src/inflation_forecast_nowcast/__init__.py": "ef84dd5df0064511d765eb30090ae8e9cc91d0d2cb0957a6a95ec40c679d75c5",
+    "src/inflation_forecast_nowcast/access.py": "1a81d030d9a2920ffeb7e486c1d5a3cc88a0c620d4a3581ab29a71ffaa46557b",
+    "src/inflation_forecast_nowcast/core.py": "dd5a4f44809f655663028af05ed6645a98ca6008aea9efb4761444d4ce324ba9",
+    "src/inflation_forecast_nowcast/pipeline.py": "d0abf53cc65e7492bd21ab0b4490f528395d4f72701911b994542fd69be86329",
+    "src/inflation_forecast_nowcast/runtime.py": "eb36556962eed80eb1e4fdc342fc1dc8079f4c63609dcbb7d69290d1f6716731",
+    "src/inflation_forecast_nowcast/sources.py": "ac8f648209c4d20f8b7e4a45c6d2dfc2e58aa5d0b6682a35b864992aff92cbba",
+    "src/inflation_forecast_nowcast/v3.py": "a72d706e2ccbda7a5efd2915c2333b4a4b3c42b32a5c29d88b456bd9716b43be",
+    "src/inflation_forecast_nowcast/viz.py": "cca03befc9ffa62893656fbc739ec77448b0682205ea9c3a0403251d7a0f1654",
+    "src/inflation_forecast_nowcast/yoy.py": "5a0d45facf01b7dc0fe9954ecceb823075f51c9fc81023bc4eeb5bed1c3b589d"
+  },
+  "result_hashes": {
+    "results/inflation_scores_mm.md": "335a5534ebb6dd4793b60d9b68308b82ba5788384580ac71e6eb55bb92f81722",
+    "results/dfm_convergence_sensitivity.md": "f88b61e15185f6b49e1d5ab234cc043f699bc3d3a52a86b24c32c07477729c38",
+    "results/inflation_scores_mm.csv": "6f17583ab67215b03b1667b429c06f5bfa86ad5f38da46f62e221d480801afe2",
+    "results/inflation_scores.csv": "840cb1796586db5c7f73a99fd1b74a6feacd96bf9e51b44e658d1cd8a3a358f5",
+    "results/findings.md": "02c383468a56b5555365b4623fa2aa861acc902b173722ac4241335e0bd44d06",
+    "results/v3_inference_attribution.md": "86800e62aecdcf8af9cc2819aa1408f654bb06a727eced05b169bc2a43da32c1",
+    "results/v3_inflation_manifest.json": "1d6d35d644db54b0e14ebb9dbf0da0b7fa209b96654027fa6c0a73e11890287d",
+    "results/findings.json": "088c5cb8456228ee9c3ce9300cbfe00e32218d885c7e00803b2c76d6ecb0a256",
+    "results/nowcast_scores.md": "ee1d3249fa45bb6a503cdfed7d514e73cc2a619a9ddcbd6c82fb52cd0d9bf82d",
+    "results/dfm_convergence_sensitivity.csv": "4889a89f5bb9a7233eff944d45a9d9e13b9066be86c56a2548ab118e3c9e2338",
+    "results/manifest.json": "7134b7abf95a61e73ed24d464d4a28d194e536e5851d5e98554a2526409d5e5d",
+    "results/v3_inference_attribution.csv": "ca0edd8e51028b542452d3c4a1b590ef00c51d15d1d2b8758c67257aec73ca64",
+    "results/inflation_scores_yoy.md": "ab34bb95117b8264c91538728516554afd7f94353c68e7cf2a8a2884801bf81d",
+    "results/nowcast_scores.csv": "a8b82942ab2b95147570a75f083a41621466fa837c43cb34c464278571cff503",
+    "results/data_inventory.json": "d58f286da350e9d1c253d338519a43db108c6e4adb98a63c1f69de401a28a76d",
+    "results/v3_cutoff_summary.csv": "3241a7111793ba4e3fb84410f0c2b427161488804f9b639b3784a1d78c0d4a5b",
+    "results/inflation_scores.md": "771edb3aad08803876c37b0305c75a312049e21043f4b8500f85360d20c6e3aa",
+    "results/technical_model_contract.json": "4b51d57741c839f5db3bdb89ebc423a134c317a83f5f1b816494daac71618fcb",
+    "results/yoy_manifest.json": "1d6d35d644db54b0e14ebb9dbf0da0b7fa209b96654027fa6c0a73e11890287d",
+    "results/inflation_scores_yoy.csv": "59f2d72a56d6d936e2ea9b28dca459087a192287ac5d0db956aa3859b554a070",
+    "results/v3_evaluation_dates.json": "4114a6e25026bf7b417b323c43321837ed12ea1e68e4c0809e2dd9165cdda7d7",
+    "results/v3_cutoff_summary.md": "6935b79f6e2073bd2a8896b23a03045051717e1793e8077153a2c1fe52e5a127",
+    "results/inflation_scores_yoy_v3.csv": "59f2d72a56d6d936e2ea9b28dca459087a192287ac5d0db956aa3859b554a070"
+  },
+  "source_presentation_commit": "38b8ed44ca41c8f851cf092be627ac0f6239017a"
+}

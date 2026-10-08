@@ -1,0 +1,218 @@
+{
+  "ao": {
+    "doi": "10.21034/qr.2511",
+    "title": "Are Phillips Curves Useful for Forecasting Inflation?",
+    "authors": [
+      "Andrew Atkeson",
+      "Lee E. Ohanian"
+    ],
+    "journal": "Quarterly Review",
+    "published": {
+      "date-parts": [
+        [
+          2001,
+          12
+        ]
+      ]
+    },
+    "volume": "25",
+    "issue": "1",
+    "page": null,
+    "verified_url": "https://api.crossref.org/works/10.21034%2Fqr.2511",
+    "verified_on": "2026-10-07",
+    "published_print": {
+      "date-parts": [
+        [
+          2001,
+          12
+        ]
+      ]
+    },
+    "published_online": null,
+    "reverified_on": "2026-10-07",
+    "verification": "fresh Crossref DOI registration response; DOI, title and author count checked",
+    "metadata_sha256": "ead5281f207868d2a93e258c6596efe9b7e676674d647afd55426863cf456d59"
+  },
+  "litterman": {
+    "doi": "10.1080/07350015.1986.10509491",
+    "title": "Forecasting With Bayesian Vector Autoregressions—Five Years of Experience",
+    "authors": [
+      "Robert B. Litterman"
+    ],
+    "journal": "Journal of Business & Economic Statistics",
+    "published": {
+      "date-parts": [
+        [
+          1986,
+          1
+        ]
+      ]
+    },
+    "volume": "4",
+    "issue": "1",
+    "page": "25-38",
+    "verified_url": "https://api.crossref.org/works/10.1080%2F07350015.1986.10509491",
+    "verified_on": "2026-10-07",
+    "published_print": {
+      "date-parts": [
+        [
+          1986,
+          1
+        ]
+      ]
+    },
+    "published_online": null,
+    "reverified_on": "2026-10-07",
+    "verification": "fresh Crossref DOI registration response; DOI, title and author count checked",
+    "metadata_sha256": "ce8ad78404e1b7db1417ff33f2786f066f72c56ee4a2f04aaf8edd3ad32c8868"
+  },
+  "dm": {
+    "doi": "10.1080/07350015.1995.10524599",
+    "title": "Comparing Predictive Accuracy",
+    "authors": [
+      "Francis X. Diebold",
+      "Roberto S. Mariano"
+    ],
+    "journal": "Journal of Business & Economic Statistics",
+    "published": {
+      "date-parts": [
+        [
+          1995,
+          7
+        ]
+      ]
+    },
+    "volume": "13",
+    "issue": "3",
+    "page": "253-263",
+    "verified_url": "https://api.crossref.org/works/10.1080%2F07350015.1995.10524599",
+    "verified_on": "2026-10-07",
+    "published_print": {
+      "date-parts": [
+        [
+          1995,
+          7
+        ]
+      ]
+    },
+    "published_online": null,
+    "reverified_on": "2026-10-07",
+    "verification": "fresh Crossref DOI registration response; DOI, title and author count checked",
+    "metadata_sha256": "3ad9b196aa3f30936dfbab21b4c3e98bd63abcc05482db9fcf3484194507c09c"
+  },
+  "hln": {
+    "doi": "10.1016/S0169-2070(96)00719-4",
+    "title": "Testing the equality of prediction mean squared errors",
+    "authors": [
+      "David Harvey",
+      "Stephen Leybourne",
+      "Paul Newbold"
+    ],
+    "journal": "International Journal of Forecasting",
+    "published": {
+      "date-parts": [
+        [
+          1997,
+          6
+        ]
+      ]
+    },
+    "volume": "13",
+    "issue": "2",
+    "page": "281-291",
+    "verified_url": "https://api.crossref.org/works/10.1016%2FS0169-2070%2896%2900719-4",
+    "verified_on": "2026-10-07",
+    "published_print": {
+      "date-parts": [
+        [
+          1997,
+          6
+        ]
+      ]
+    },
+    "published_online": null,
+    "reverified_on": "2026-10-07",
+    "verification": "fresh Crossref DOI registration response; DOI, title and author count checked",
+    "metadata_sha256": "67c546d3da601c4311f246017969d04e9822f10c13e2c49c7281e9fa388ec1a6"
+  },
+  "nowcast": {
+    "doi": "10.1016/j.jmoneco.2008.05.010",
+    "title": "Nowcasting: The real-time informational content of macroeconomic data",
+    "authors": [
+      "Domenico Giannone",
+      "Lucrezia Reichlin",
+      "David Small"
+    ],
+    "journal": "Journal of Monetary Economics",
+    "published": {
+      "date-parts": [
+        [
+          2008,
+          5
+        ]
+      ]
+    },
+    "volume": "55",
+    "issue": "4",
+    "page": "665-676",
+    "verified_url": "https://api.crossref.org/works/10.1016%2Fj.jmoneco.2008.05.010",
+    "verified_on": "2026-10-07",
+    "published_print": {
+      "date-parts": [
+        [
+          2008,
+          5
+        ]
+      ]
+    },
+    "published_online": null,
+    "reverified_on": "2026-10-07",
+    "verification": "fresh Crossref DOI registration response; DOI, title and author count checked",
+    "metadata_sha256": "baeac78f527ad7cfa9639ebb99cd289ab070537c202b118491a6447061b5e57d"
+  },
+  "bm": {
+    "doi": "10.1002/jae.2306",
+    "title": "MAXIMUM LIKELIHOOD ESTIMATION OF FACTOR MODELS ON DATASETS WITH ARBITRARY PATTERN OF MISSING DATA",
+    "authors": [
+      "Marta Bańbura",
+      "Michele Modugno"
+    ],
+    "journal": "Journal of Applied Econometrics",
+    "published": {
+      "date-parts": [
+        [
+          2012,
+          11,
+          12
+        ]
+      ]
+    },
+    "volume": "29",
+    "issue": "1",
+    "page": "133-160",
+    "verified_url": "https://api.crossref.org/works/10.1002%2Fjae.2306",
+    "verified_on": "2026-10-07",
+    "published_print": {
+      "date-parts": [
+        [
+          2014,
+          1
+        ]
+      ]
+    },
+    "published_online": {
+      "date-parts": [
+        [
+          2012,
+          11,
+          12
+        ]
+      ]
+    },
+    "reverified_on": "2026-10-07",
+    "verification": "fresh Crossref DOI registration response; DOI, title and author count checked",
+    "metadata_sha256": "74f97e2fdcbb84b08ee4c1ddf2ce8b3e7eb7ec2cf4ee51f6480730a8bdf19866",
+    "citation_year": 2014,
+    "year_basis": "Journal of Applied Econometrics 29(1), January/February 2014; official Wiley citation, https://onlinelibrary.wiley.com/doi/10.1002/jae.2306 ; online first 2012 retained separately"
+  }
+}

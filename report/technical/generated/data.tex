@@ -1,0 +1,22 @@
+\begin{table}[htbp]
+\centering
+\footnotesize
+\caption{Official source definitions and observed coverage}
+\begin{tabularx}{\linewidth}{p{0.18\linewidth}p{0.36\linewidth}p{0.23\linewidth}X}
+\toprule
+Variable & Source / exact ID and selectors & Transform & Source coverage \\
+\midrule
+EA headline prices & Eurostat: prc\_\allowbreak{}hicp\_\allowbreak{}minr; unit=I25; coicop18=TOTAL; geo=EA21 & 100(P/P lag12 – 1); secondary 100 Δlog & 1999-12 / 2026-09 \\
+EA core prices & Eurostat: prc\_\allowbreak{}hicp\_\allowbreak{}minr; unit=I25; coicop18=TOT\_\allowbreak{}X\_\allowbreak{}NRG\_\allowbreak{}FOOD; geo=EA21 & Same price transforms & 1999-12 / 2026-09 \\
+EA unemployment & Eurostat: une\_\allowbreak{}rt\_\allowbreak{}m; s\_\allowbreak{}adj=SA; age=TOTAL; unit=PC\_\allowbreak{}ACT; sex=T; geo=EA21 & Level, percent & 2000-01 / 2026-08 \\
+DE real GDP & Eurostat: namq\_\allowbreak{}10\_\allowbreak{}gdp; unit=CLV\_\allowbreak{}I20; s\_\allowbreak{}adj=SCA; na\_\allowbreak{}item=B1GQ; geo=DE & 100 Δlog; q/q, not annualised & 1999Q1 / 2026Q2 \\
+DE production & Eurostat: sts\_\allowbreak{}inpr\_\allowbreak{}m; indic\_\allowbreak{}bt=PRD; nace\_\allowbreak{}r2=B-D; s\_\allowbreak{}adj=SCA; unit=I21; geo=DE & 100 Δlog; m/m & 1999-01 / 2026-07 \\
+DE retail volume & Eurostat: sts\_\allowbreak{}trtu\_\allowbreak{}m; indic\_\allowbreak{}bt=VOL\_\allowbreak{}SLS; nace\_\allowbreak{}r2=G47; s\_\allowbreak{}adj=SCA; unit=I21; geo=DE & 100 Δlog; m/m & 1999-01 / 2026-08 \\
+DE unemployment & Eurostat: une\_\allowbreak{}rt\_\allowbreak{}m; s\_\allowbreak{}adj=SA; age=TOTAL; unit=PC\_\allowbreak{}ACT; sex=T; geo=DE & First difference, pp & 1999-01 / 2026-08 \\
+DE sentiment & Eurostat: ei\_\allowbreak{}bssi\_\allowbreak{}m\_\allowbreak{}r2; s\_\allowbreak{}adj=SA; indic=BS-ESI-I; geo=DE & Level index & 1999-01 / 2026-09 \\
+TR headline prices & EVDS: TP.TUKFIY2025.GENEL & Same price transforms & 2005-01 / 2026-09 \\
+TR unemployment & EVDS: TP.TIG08 & Level, percent & 2005-01 / 2026-08 \\
+\bottomrule
+\end{tabularx}
+\par\vspace{3pt}\begin{minipage}{\linewidth}\footnotesize Source: author's calculations from the documented inputs.\allowbreak{} Coverage is source availability, not an identical estimation sample.\allowbreak{} Missing observations are not interpolated; source countries and seasonality follow the exact selectors.\allowbreak{}\end{minipage}
+\end{table}

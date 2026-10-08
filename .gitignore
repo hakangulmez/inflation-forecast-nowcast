@@ -1,0 +1,39 @@
+data/*
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+runs/
+.cache/
+*.egg-info/
+dist/
+
+# Private database files, including journals/WALs, wherever created.
+*.sqlite*
+*.db
+
+# Local LaTeX compiler and build scratch.
+.tools/
+report/technical/*.aux
+report/technical/*.log
+report/technical/*.out
+report/technical/main.pdf
+
+# Private fitted objects and source containers.
+*.npz
+*.npy
+*.rds
+*.RData
+*.rda
+*.dta
+*.parquet
+*.feather
+*.db*
+.DS_Store

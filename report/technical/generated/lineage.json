@@ -1,0 +1,184 @@
+{
+  "inputs": {
+    "results/technical_model_contract.json": "4b51d57741c839f5db3bdb89ebc423a134c317a83f5f1b816494daac71618fcb",
+    "results/data_inventory.json": "d58f286da350e9d1c253d338519a43db108c6e4adb98a63c1f69de401a28a76d",
+    "results/manifest.json": "7134b7abf95a61e73ed24d464d4a28d194e536e5851d5e98554a2526409d5e5d",
+    "results/yoy_manifest.json": "1d6d35d644db54b0e14ebb9dbf0da0b7fa209b96654027fa6c0a73e11890287d",
+    "results/inflation_scores_yoy.csv": "59f2d72a56d6d936e2ea9b28dca459087a192287ac5d0db956aa3859b554a070",
+    "results/nowcast_scores.csv": "a8b82942ab2b95147570a75f083a41621466fa837c43cb34c464278571cff503",
+    "results/inflation_scores_mm.csv": "6f17583ab67215b03b1667b429c06f5bfa86ad5f38da46f62e221d480801afe2",
+    "results/dfm_convergence_sensitivity.csv": "4889a89f5bb9a7233eff944d45a9d9e13b9066be86c56a2548ab118e3c9e2338",
+    "results/v3_inference_attribution.csv": "ca0edd8e51028b542452d3c4a1b590ef00c51d15d1d2b8758c67257aec73ca64",
+    "figures/inflation_all_benchmarks.png": "64626e9ad8ec1f1488d4aab6cbcdf494d27788595529aaf9fc73df367cbd644e",
+    "figures/nowcast.png": "ae93c2e670bad349f914cd614b9e738a27e74abeda5af57e8cff84d9812add85"
+  },
+  "prose_macros": {
+    "ARCap": {
+      "value": 12,
+      "rendered": "12"
+    },
+    "BVARLag": {
+      "value": 12,
+      "rendered": "12"
+    },
+    "OwnShrink": {
+      "value": 0.2,
+      "rendered": "0.2"
+    },
+    "CrossShrink": {
+      "value": 0.1,
+      "rendered": "0.1"
+    },
+    "LassoPenalty": {
+      "value": 0.05,
+      "rendered": "0.05"
+    },
+    "BridgeRidge": {
+      "value": 0.01,
+      "rendered": "0.01"
+    },
+    "EMCap": {
+      "value": 100,
+      "rendered": "100"
+    },
+    "EMTolerance": {
+      "value": 1e-05,
+      "rendered": "1e-05"
+    },
+    "LossDraws": {
+      "value": 499,
+      "rendered": "499"
+    },
+    "LossBlock": {
+      "value": 12,
+      "rendered": "12"
+    },
+    "EvalEnd": {
+      "value": "2026-08",
+      "rendered": "2026-08"
+    },
+    "EvalStart": {
+      "value": "2015-01",
+      "rendered": "2015-01"
+    },
+    "GDPStart": {
+      "value": "2012Q1",
+      "rendered": "2012Q1"
+    },
+    "GDPEnd": {
+      "value": "2026Q2",
+      "rendered": "2026Q2"
+    },
+    "EvalN": {
+      "value": 140,
+      "rendered": "140"
+    },
+    "DFMTotal": {
+      "value": 232,
+      "rendered": "232"
+    },
+    "DFMConverged": {
+      "value": 224,
+      "rendered": "224"
+    },
+    "DFMFailed": {
+      "value": 8,
+      "rendered": "8"
+    },
+    "Seed": {
+      "value": 20261007,
+      "rendered": "20261007"
+    },
+    "CoreRatio": {
+      "value": 1.076804469862415,
+      "rendered": "1.077"
+    },
+    "CoreLow": {
+      "value": 0.999272722150932,
+      "rendered": "0.999"
+    },
+    "CoreHigh": {
+      "value": 1.1925295151189332,
+      "rendered": "1.193"
+    },
+    "CoreP": {
+      "value": 0.0923826088516942,
+      "rendered": "0.092"
+    },
+    "CoreRMSE": {
+      "value": 0.3889857473133813,
+      "rendered": "0.389"
+    },
+    "HeadlineRatio": {
+      "value": 1.070706960097031,
+      "rendered": "1.071"
+    },
+    "HeadlineLow": {
+      "value": 0.9599098017503565,
+      "rendered": "0.960"
+    },
+    "HeadlineHigh": {
+      "value": 1.1668528627077486,
+      "rendered": "1.167"
+    },
+    "HeadlineP": {
+      "value": 0.3049159061585628,
+      "rendered": "0.305"
+    },
+    "HeadlineRMSE": {
+      "value": 0.7360148711018231,
+      "rendered": "0.736"
+    },
+    "TRRatio": {
+      "value": 1.5258087361479586,
+      "rendered": "1.526"
+    },
+    "TRLow": {
+      "value": 1.3049399521031126,
+      "rendered": "1.305"
+    },
+    "TRHigh": {
+      "value": 1.7123024810918872,
+      "rendered": "1.712"
+    },
+    "TRP": {
+      "value": 0.0628731943932724,
+      "rendered": "0.063"
+    },
+    "TRRMSE": {
+      "value": 9.769966173685988,
+      "rendered": "9.770"
+    },
+    "NowcastRMSE": {
+      "value": 2.1166471516676757,
+      "rendered": "2.117"
+    },
+    "NowcastRatio": {
+      "value": 1.5523711243068203,
+      "rendered": "1.55"
+    },
+    "TRLongBVAR": {
+      "value": 2.3893186315162613,
+      "rendered": "2.389"
+    },
+    "TRLongAR": {
+      "value": 1.9497096868080024,
+      "rendered": "1.950"
+    },
+    "SeasonalTRRatio": {
+      "value": 0.8707188702999368,
+      "rendered": "0.871"
+    },
+    "SeasonalTRLow": {
+      "value": 0.6707288585254367,
+      "rendered": "0.671"
+    },
+    "SeasonalTRHigh": {
+      "value": 1.0754618618194849,
+      "rendered": "1.075"
+    }
+  },
+  "estimation": false,
+  "paid_calls": 0,
+  "source": "empirical result aggregates; presentation only"
+}

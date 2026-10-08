@@ -1,0 +1,94 @@
+"""Read-only release audit; raw data/keys remain private."""
+
+import hashlib
+import json
+import subprocess
+from pathlib import Path
+
+import numpy as np
+import pandas as pd
+from pypdf import PdfReader
+
+from inflation_forecast_nowcast.access import read_keys
+
+root = Path.cwd()
+manifest = json.loads((root / "results/manifest.json").read_text())
+checks = []
+
+
+def check(name, passed):
+    checks.append(dict(check=name, passed=bool(passed)))
+
+
+for path, digest in manifest["code"].items():
+    check("code hash " + path, hashlib.sha256((root / path).read_bytes()).hexdigest() == digest)
+check("zero paid calls", manifest["paid_calls"] == 0)
+check(
+    "source inventory ten series",
+    len(json.loads((root / "results/data_inventory.json").read_text())) == 11,
+)
+private = root / "runs" / manifest["analysis_id"]
+for area in ["EA", "TR"]:
+    f = pd.read_csv(private / (area + "_forecasts.csv"))
+    origin = pd.PeriodIndex(f.origin, freq="M")
+    target = pd.PeriodIndex(f.date, freq="M")
+    check("forecast target beyond origin " + area, np.all(target > origin))
+    check(
+        "horizon-date alignment " + area,
+        all((b - a).n == h for a, b, h in zip(origin, target, f.horizon, strict=True)),
+    )
+yoy = json.loads((root / "results/yoy_manifest.json").read_text())
+for path, digest in yoy["code"].items():
+    check(
+        "V2 forecast code " + path, hashlib.sha256((root / path).read_bytes()).hexdigest() == digest
+    )
+check("V2 same source observations", yoy["inputs"] == manifest["input_sha256"])
+check(
+    "inherited nowcast manifest",
+    hashlib.sha256((root / "results/manifest.json").read_bytes()).hexdigest()
+    == yoy["inherited_nowcast_manifest_sha256"],
+)
+primary = pd.read_csv(root / "results/inflation_scores_yoy.csv")
+check("V2 dual benchmarks", set(primary.benchmark) == {"RW", "AO"})
+check("V2 fixed horizons", set(primary.horizon) == {1, 3, 6, 12})
+check("V2 matched target counts", primary.n.eq(140).all())
+check("V2 zero paid calls", yoy["paid_calls"] == 0)
+for area in ["EA", "TR"]:
+    f = pd.read_csv(root / "runs" / yoy["analysis_id"] / (area + "_forecasts.csv"))
+    origin = pd.PeriodIndex(f.origin, freq="M")
+    target = pd.PeriodIndex(f.date, freq="M")
+    check(
+        "V2 horizon accounting " + area,
+        all((b - a).n == h for a, b, h in zip(origin, target, f.horizon, strict=True)),
+    )
+check("actual policy page count", len(PdfReader(root / "report/policy_note.pdf").pages) == 2)
+files = (
+    subprocess.check_output(
+        ["git", "ls-files", "--cached", "--others", "--exclude-standard", "-z"], cwd=root
+    )
+    .decode()
+    .split("\0")
+)
+keys = list(read_keys(root / ".env").values())
+leaks = sum(
+    key.encode() in (root / name).read_bytes()
+    for name in filter(None, files)
+    if (root / name).is_file()
+    for key in keys
+)
+check("candidate credential scan", leaks == 0)
+check(
+    "raw data/env/run not tracked",
+    not any(
+        x.startswith(("data/raw/", "data/processed/", "runs/", ".venv/")) or x == ".env"
+        for x in files
+    ),
+)
+check("no remotes", not subprocess.check_output(["git", "remote"], cwd=root).strip())
+result = {
+    "checks": checks,
+    "all_pass": all(x["passed"] for x in checks),
+    "dfm_unconverged": manifest["dfm_total"] - manifest["dfm_converged"],
+}
+(root / "results/audit.json").write_text(json.dumps(result, indent=2) + "\n")
+print(json.dumps({"checks": len(checks), "all_pass": result["all_pass"]}))

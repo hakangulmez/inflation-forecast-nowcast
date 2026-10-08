@@ -1,0 +1,18 @@
+\begin{table}[htbp]
+\centering
+\footnotesize
+\caption{Information-set and HAC changes separated on identical error pairs}
+\begin{tabularx}{\linewidth}{Xlrrrrr}
+\toprule
+Target & Model & n & Unmasked A & Unmasked B & Masked A & Masked B \\
+\midrule
+ea\_\allowbreak{}core & BVAR & 140 & 0.018 & 0.002 & 0.212 & 0.092 \\
+ea\_\allowbreak{}core & Ensemble & 140 & 0.253 & 0.358 & 0.033 & 0.144 \\
+ea\_\allowbreak{}headline & BVAR & 140 & 0.132 & 0.110 & 0.008 & 0.001 \\
+ea\_\allowbreak{}headline & Ensemble & 140 & 0.055 & 0.131 & 0.135 & 0.305 \\
+tr\_\allowbreak{}headline & BVAR & 140 & 0.418 & 0.394 & 0.000 & 0.063 \\
+tr\_\allowbreak{}headline & Ensemble & 140 & 0.090 & 0.113 & 0.003 & 0.055 \\
+\bottomrule
+\end{tabularx}
+\par\vspace{3pt}\begin{minipage}{\linewidth}\footnotesize Source: author calculations.\allowbreak{} A: L = h - 1; B: L = h + 11.\allowbreak{} Unmasked and publication-masked forecasts use the same latest-vintage data.\allowbreak{} Each information-set comparison across HAC rules uses identical paired errors.\allowbreak{} No bootstrap interval is changed by HAC.\allowbreak{}\end{minipage}
+\end{table}

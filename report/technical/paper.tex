@@ -1,0 +1,154 @@
+\begin{abstract}
+We ask whether fixed statistical models improve inflation forecasts over simple benchmarks and whether monthly information improves German GDP nowcasts. We evaluate expanding-window year-on-year forecasts against random-walk and Atkeson--Ohanian-style benchmarks and compare bridge, unrestricted MIDAS and factor nowcasts. Euro-area core BVAR relative RMSE is \CoreRatio{}, with interval [\CoreLow{}, \CoreHigh{}]; the headline ensemble ratio is \HeadlineRatio{}. The full-sample month-three factor nowcast has relative RMSE \NowcastRatio{} against the bridge. The earlier core gain does not survive the assumed publication calendar; the headline ensemble also has a ratio above one. Nowcast rankings remain sensitive to pandemic quarters. Revised data, simulated publication delays and conditional loss inference limit operational interpretation.
+\end{abstract}
+\section{Introduction and contribution}
+A forecasting method is useful only relative to a defensible target, information set and benchmark. For non-seasonally-adjusted monthly inflation, a simple last-observation forecast can be an unusually weak comparator. The primary annual target was therefore declared before the revised evaluation, while the original monthly results were preserved as secondary evidence. This paper describes both without selecting model settings on their evaluation performance.
+
+\citet{ao} demonstrate the difficulty of outperforming simple inflation benchmarks. \citet{litterman} motivates shrinkage in Bayesian VAR forecasting. \citet{dm} compare predictive accuracy, and \citet{hln} give the small-sample correction used here. \citet{nowcast} study real-time macroeconomic information, while \citet{bm} develop factor estimation with arbitrary missing patterns.
+
+The exercise contributes disciplined empirical accounting rather than a forecasting-theory advance. It aligns loss comparisons on common target dates, fixes model settings before evaluation, records ragged-edge input availability and distinguishes uncertainty about realized evaluation loss from future prediction intervals. We retain the nowcast estimates, convergence flags and specified pandemic exclusion. We report empirical values from the result aggregates and state the estimator and inference equations explicitly. We restrict the comparison to the model families reported below.
+\section{Data}
+\input{generated/data.tex}
+Official Eurostat and CBRT/TURKSTAT inputs are latest-vintage observations. Their IDs, selectors, coverage and acquisition checksums are retained in the source ledger. Euro-area geography is EA21 as supplied, not a reconstruction of historical membership. We retain source data privately and document acquisition and terms separately.\footnote{The acquisition scripts and \code{DATA.md} list identifiers, source terms and attribution.}
+
+For the primary forecast target, prices become exact annual percentage changes. Unemployment enters the inflation system in levels. The secondary monthly target and German GDP use log growth. GDP units are quarter-on-quarter log growth in percentage points, \emph{not annualised}. Production/retail log growth, changes in German unemployment and sentiment levels enter the nowcast. Calendar missingness is preserved; source interpolation is never used. We begin common inflation histories where all system components are available and exclude specifications with an internal gap.
+\section{Econometric model}
+\subsection{Targets, origin windows and benchmark forecasts}
+Let $P_t$ be the price index and $o$ a monthly forecast origin. We define the primary and secondary targets as
+\begin{equation}
+ \pi_t^{yy}=100(P_t/P_{t-12}-1),\qquad
+ \pi_t^{mm,\log}=100(\log P_t-\log P_{t-1}).
+\end{equation}
+The annual forecasts target $\pi_{o+h}^{yy}$, not average inflation over the following year. The declared monthly horizons are $h\in\{1,3,6,12\}$. We set origin $o$ to the last calendar day of its month. We assume final prices for reference month $t$ are available at the end of $t+1$ and unemployment at the end of $t+2$. These conservative assumptions are not exact historical release calendars; we use no flash estimates. Target-only models stop at $c_P=o-1$, while complete-panel models stop at $c_U=o-2$ and forecast additional steps to the unchanged target $o+h$. Origin-bound training expands through the effective cutoff, with an initial history requirement and common target evaluation beginning at the declared evaluation date. Our matched target months are \EvalStart{}--\EvalEnd{}, with \EvalN{} observations per target/horizon/method. No future unemployment or future target observation enters an origin fit.
+
+We define the random walk and AO adaptation as
+\begin{align}
+ \widehat\pi_{o+h|o}^{RW}&=\pi_{o-1}^{yy},\\
+ \widehat\pi_{o+h|o}^{AO}&=\sum_{j=0}^{11}100(P_{o-1-j}/P_{o-2-j}-1).
+\end{align}
+We also predeclare an assumption-based seasonal-mean benchmark. Let $d_t=\log P_t-\log P_{t-1}$ and $J_o(m)$ contain the three most recent published changes for calendar month $m$. With the same observed history at every horizon,
+\begin{equation}
+ \widehat d_{t|o}=\begin{cases}d_t,&t\leq c_P,\\ \frac13\sum_{j\in J_o(m(t))}d_j,&t>c_P,\end{cases}
+ \quad \widehat\pi^{SM}_{T|o}=100\left[\exp\left(\sum_{t=T-11}^{T}\widehat d_{t|o}\right)-1\right].
+\end{equation}
+Both price levels defining an observed change must be published. Any required month with fewer than three eligible same-month observations makes the benchmark missing. We go further back when a recent change is unpublished; predictions never enter the averaging sample. This also handles an unpublished denominator month. Repeating the latest published same-calendar-month change instead reproduces y/y RW, even beyond twelve forecast steps, so it is not a separate benchmark. SeasonalMean stays outside the unchanged ensemble. Averaging attenuates exceptional historical movements but can lag regime changes.
+
+AO is the annualised arithmetic mean of the preceding simple monthly percentage changes, held fixed at all horizons. It is neither compounded annual inflation nor the original paper's next-year-average forecast target. This distinction becomes large when monthly inflation is high. We use this adaptation as a benchmark convention, not an exact replication of the original AO experiment.
+
+For AR forecasting, the model is $\pi_t=a+\sum_{\ell=1}^{p}\varphi_\ell\pi_{t-\ell}+e_t$. We compare feasible AR lag candidates by BIC on a common origin-specific window, using $n\log(RSS/n)+(p+1)\log n$, then refit the selected model on its full training sample. Multi-step forecasts iterate predicted values. The lag cap is \ARCap{}, with a fixed feasibility rule; evaluation outcomes never select the lag policy.
+
+Calendar seasonality used in direct models is known at the origin. Future realized macroeconomic covariates are not substituted for their origin information. An internal data gap stops inflation fitting rather than shortening the calendar by dropping its missing dates.
+\subsection{Shrinkage, direct regressions and the ensemble}
+The joint inflation system contains euro-area headline/core annual inflation and unemployment, or Türkiye headline annual inflation and unemployment. With $x_t$ an intercept and lagged system vector, our fixed-lag BVAR posterior mean is
+\begin{equation}
+ \widehat\beta_j=(X'X+V_j^{-1})^{-1}X'y_j,
+ \qquad (V_j)_{k\ell, k\ell}=\frac{\lambda_{jk}^{2}}{\ell^{2}s_k^{2}}.
+\end{equation}
+We use training-only AR innovation variances to obtain $s_k^2$, floored for numerical stability. Own- and cross-variable shrinkage are \OwnShrink{} and \CrossShrink{}, with lag order \BVARLag{}; the intercept receives a diffuse variance. The prior coefficient mean is \emph{zero}, including own lags: no random-walk prior mean is silently assumed. We use an equation-wise normal-prior posterior mean, without posterior predictive intervals or a fully estimated system covariance prior. Forecast recursion iterates the full predicted vector, including unemployment.
+
+For complete-panel models define effective forecast distance $H=h+2$. We estimate the direct Phillips specification separately by this distance:
+\begin{equation}
+ \pi_{t+H}=a_H+b_H\pi_t+c_Hu_t+\delta_H'S_{t+H}+e_{t+H},
+\end{equation}
+where $S$ contains our calendar-month indicators. For the direct Lasso, we expand the inflation history in the design to its fixed set of lags, retaining current unemployment and the same calendar indicators. We standardize design columns by their training means and standard deviations; constant columns receive unit scale. We minimize
+\begin{equation}
+ \frac{1}{2n_H}\|y_H-a_H-X_H^{std}\beta_H\|_2^2+\alpha\|\beta_H\|_1,
+\end{equation}
+with penalty $\alpha=\LassoPenalty{}$ and no evaluation-based tuning. Only training pairs with both predictors and the $H$-step outcome observed by $c_U$ enter. BVAR iterates $h+2$ steps from $c_U$, while AR iterates $h+1$ from $c_P$. The direct Phillips regression is not described as a causal Phillips curve.
+
+We form the ensemble as the arithmetic mean of RW, AR, BVAR, Phillips and Lasso forecasts and exclude AO. The benchmark and ensemble definitions do not change across target/horizon evaluations. Models with a missing origin prediction cannot silently be replaced by another model; score comparisons match available error dates. No additional feature-selection search or forecast-combination weights are fitted on evaluation losses.
+\subsection{Ragged-edge GDP nowcasting}
+Let $g_q=100\Delta\log GDP_q$ denote unannualised q/q growth. The retained GDP target quarters span \GDPStart{}--\GDPEnd{}. The simulated information set hides target-quarter GDP and earlier quarters not yet published under the fixed delay. Sentiment is available in its current month; the other monthly inputs receive the declared delayed mask. These rules are applied to each target origin and to the bridge's historical training patterns. A genuinely missing production value remains unavailable even where a fixed mask would otherwise permit it.
+
+For the bridge, we use available within-quarter averages; for unrestricted MIDAS, we use observed month slots as separate regressors. We replace missing design values with \emph{training-column means}, with zero when a training column has no observations. This is an explicit model-level replacement, not interpolation of source series. For both models, we estimate
+\begin{equation}
+ \widehat b=(Z'Z+\kappa\,\mathrm{diag}(0,1,\ldots,1))^{-1}Z'g,
+\end{equation}
+with ridge $\kappa=\BridgeRidge{}$ and an unpenalized intercept. Historical rows reproduce the target information-month pattern. Previously published GDP trains the regression; the withheld target quarter never does.
+
+We standardize each observed series and use one common factor with AR dynamics and AR idiosyncratic components:
+\begin{align}
+ x_{it}^{std}&=\lambda_i f_t+\epsilon_{it},& f_t&=a f_{t-1}+\eta_t,\\
+ \epsilon_{it}&=\rho_i\epsilon_{i, t-1}+v_{it},&&\\
+ g_q^{std}&=\lambda_Q(f_t+2f_{t-1}+3f_{t-2}+2f_{t-3}+f_{t-4})
+\nonumber\\
+ &\quad+\epsilon_t^Q+2\epsilon_{t-1}^Q+3\epsilon_{t-2}^Q+2\epsilon_{t-3}^Q+\epsilon_{t-4}^Q.
+\end{align}
+The quarterly observation appears at quarter end; the aggregation is our mixed-frequency mapping, not multiplication of GDP growth by an annualisation factor. The loading absorbs the measurement scaling. We estimate by EM with tolerance \EMTolerance{} and iteration cap \EMCap{}.\footnote{We use the mixed-frequency state-space estimator \code{DynamicFactorMQ}.} Smoothed prediction uses only origin-bounded masked inputs, extended with missing observations through the target quarter; it does not observe subsequent observations.
+
+We assess convergence by comparing relative consecutive log-likelihood changes with the fixed tolerance. Nonconverged predictions remain in the primary scores and are flagged; the convergence-only matched sensitivity is retained separately.
+\subsection{Forecast evaluation and uncertainty}
+For matched target dates, $e_t=y_t-\widehat y_t$ and benchmark errors $b_t$ define
+\begin{equation}
+ RMSE=\sqrt{\overline{e_t^2}},\quad MAE=\overline{|e_t|},\quad
+ R_{RMSE}=\sqrt{\overline{e_t^2}/\overline{b_t^2}}.
+\end{equation}
+We resample model and benchmark errors together in paired circular blocks. The saved \LossDraws{} resamples use inflation blocks of length \LossBlock{}; the quarterly nowcast uses its separately declared block length. Saved percentile endpoints supply pointwise central intervals for RMSE and ratios. These are evaluation-loss uncertainty, not coefficient intervals, predictive distributions or uncertainty from model selection.
+
+For the Diebold--Mariano comparison, $d_t=e_t^2-b_t^2$, with centered $\widetilde d_t$. We compute
+\begin{align}
+ \widehat S_h&=\frac{1}{n}\sum_t\widetilde d_t^2
+ +2\sum_{\ell=1}^{L}(1-\ell/(L+1))\frac{1}{n}\sum_{t=\ell+1}^{n}\widetilde d_t\widetilde d_{t-\ell},\\
+ DM_{HLN}&=\frac{\overline d}{\sqrt{\widehat S_h/n}}
+ \sqrt{\frac{n+1-2h+h(h-1)/n}{n}}.
+\end{align}
+We calculate two-sided $p$ values using a Student distribution with $n-1$ degrees of freedom. Insufficient samples, near-constant loss differences or nonpositive estimated long-run variance produce a missing test, not an artificial rejection. Negative statistics favor the model over its benchmark.
+
+We fix Bartlett bandwidth $L=h+11$, including autocovariances through $L$, before evaluation. We retain the legacy $L=h-1$ rule on exactly the same error pairs and preserve the original unmasked results. The fixed rule does not guarantee all dependence is captured. Neither rule validates the separately retained loss bootstrap. Multiple and nested-model comparisons remain exploratory and unadjusted.
+
+The expanding-window design includes repeated estimation and re-selection of AR lag using training information. Evaluation uncertainty nevertheless conditions on those fitted forecasts; it does not rerun the origin fits inside the loss bootstrap. Revisions are also held fixed at their latest-vintage values.
+\section{Results}
+\subsection{Primary annual inflation at the shortest horizon}
+\input{generated/horizon_one.tex}
+For EA core, BVAR relative RMSE is \CoreRatio{} [\CoreLow{}, \CoreHigh{}], with corrected-test $p=\CoreP{}$. For EA headline, the ensemble ratio is \HeadlineRatio{} [\HeadlineLow{}, \HeadlineHigh{}], while $p=\HeadlineP{}$ does not give the same conventional significance conclusion. Türkiye BVAR ratio is \TRRatio{} [\TRLow{}, \TRHigh{}], with $p=\TRP{}$. Model selection is not retuned after observing these differences.
+
+The full table includes both successful and weak models. Performance relative to a poor AO approximation under high inflation is not evidence of operational forecast accuracy. Likewise, an RMSE ratio below unity is economically descriptive, while inference determines how much sampling precision the observed evaluation period supplies. The earlier apparent core gain disappears under the assumed publication calendar. Ratios above one at the headline specifications make a general improvement claim unwarranted.
+The assumption-based seasonal-mean benchmark has a Türkiye one-month RMSE ratio of \SeasonalTRRatio{} [\SeasonalTRLow{}, \SeasonalTRHigh{}] against RW. The interval includes one: this point gain does not establish a general forecasting advantage. Averaging historical same-month changes attenuates exceptional movements but may lag regime changes.
+\subsection{All declared horizons and headline figure}
+\fig{inflation_all_benchmarks.png}{0.88}{One-month relative-RMSE heatmap against the annual random walk for all models and targets, with paired loss intervals printed in each cell. The table below follows BVAR, the fixed ensemble and seasonal mean across horizons.}
+\input{generated/horizons.tex}
+At twelve months Türkiye BVAR/RW RMSE is \TRLongBVAR{} and AR/RW is \TRLongAR{}. Large forecast errors are compatible with the 2021–23 inflation surge and regime-adaptation difficulty; we do not identify that episode's separate causal contribution. Longer-horizon results are reported without selecting a horizon where gains appear strongest. The table contrasts BVAR and ensemble under identical target/benchmark definitions; other methods remain in the complete result CSV. Horizon changes alter both training pairs and error dependence. They are not independent replications of one forecasting test.
+\subsection{German GDP: retained nowcast evidence}
+\input{generated/nowcast.tex}
+\fig{nowcast.png}{0.78}{Retained German GDP errors by model and information month. GDP is unannualised q/q log growth. Loss intervals summarize matched evaluation quarters, not current-quarter predictive density.}
+The third-month factor nowcast RMSE is \NowcastRMSE{} pp, or \NowcastRatio{} times the bridge benchmark. Increasing sophistication therefore did not ensure an improvement in this retained exercise. Information months reflect fixed simulated publication delays rather than archived real-time data. Convergence and pandemic sensitivities are reported below instead of silently filtering the primary evaluation.
+\section{Robustness}
+\input{generated/inference_changes.tex}
+\input{generated/robustness.tex}
+\input{generated/covid.tex}
+\input{generated/monthly.tex}
+The NSA monthly-inflation table is secondary: large improvements over its random walk are partly a benchmark/seasonality issue, which motivated the primary annual target. It is not pooled with annual errors or used to select hyperparameters. Both target definitions and all original estimates are preserved. Unexecuted extensions remain labelled unavailable; the scope does not include fitted historical-vintage models or a larger unreported model search.
+\subsection{AO benchmark sensitivity}
+\input{generated/ao.tex}
+The full saved table contains every method, horizon and both denominators; the selected rows show the fixed BVAR, ensemble and RW at the shortest and longest horizons. AO is a monthly arithmetic annualisation, whereas the target compounds price changes over a year. In Türkiye's high-inflation history that distinction can make AO a materially weaker benchmark. Good relative performance against AO does not by itself establish improvement against RW, nor does it validate a causal unemployment effect.
+
+Comparisons use matched errors at each target date and report unadjusted corrected-test values. No benchmark was chosen after evaluation to optimize a headline, and the interpretation emphasizes the loss of the earlier core gain and uncertain performance against RW. Every other method remains available in the full aggregate output rather than hidden by this table's display selection.
+\section{Limitations and future work}
+Latest-vintage data with simulated publication delays cannot undo historical revisions or reproduce actual publication calendars. The ragged-edge mask therefore prevents obvious future leakage within the exercise but does not establish a live operational performance record. The quarter's GDP is always withheld; other availability follows fixed assumptions rather than archived historical observations.
+
+Publication masks do not reconstruct historical data vintages. The conservative two-month unemployment mask reduces information for unemployment-based models and can affect relative performance. Annual inflation overlaps and the fixed covariance truncation can leave unaccounted serial dependence. Bootstrap loss bands are conditional on saved origin forecasts and fixed source vintages. Neither the block intervals nor the corrected tests adjust for exploratory comparisons across the model/target/horizon grid. Their different conclusions near conventional thresholds are disclosed.
+
+Shrinkage priors, the zero-mean coefficient convention, the direct Lasso penalty and the equal-weight ensemble are fixed. They may be poorly adapted to structural change or unusually high inflation. A forecast-ranking result is not a structural causal result. The monthly AO adaptation differs from the original paper's forecast target and is not a compounded annual rate.
+
+The factor model has \DFMConverged{} converged fits out of \DFMTotal{}; the remaining \DFMFailed{} predictions are retained and flagged. Conditioning evaluation on convergence changes the date sample and can favor easier periods. Bridge/MIDAS design-mean replacement is also a modeling assumption. Missing source values, including the production ragged edge, are not interpolated.
+\section{Conclusion}
+Publication-lag-adjusted, latest-vintage pseudo-real-time evaluation does not reproduce the earlier core BVAR improvement. The headline ensemble also has a point loss ratio above one. This is an information-set result under explicit conservative assumptions, not a redesign selected on significance. We retain all forecasts, both HAC rules and the fixed seasonal-mean benchmark. The retained GDP exercise further shows that a mixed-frequency factor model need not dominate a bridge in a small information set.
+
+The contribution is a fairer, source-bound comparison: state the exact target, retain simple origin-only benchmarks, avoid evaluation tuning, disclose convergence and missingness, and distinguish uncertainty about losses from prediction uncertainty. We make the forecasting assumptions and limitations explicit. A historical-vintage extension would require archived source vintages and a separate estimation design.
+Future work includes archived first-release vintages, dependence and full-estimation-chain resampling, predeclared multiplicity and nested-model inference, rolling-window and prior sensitivity with training-only selection, properly targeted AO alternatives, GDP benchmark/information audits, crisis-loss attribution, optimizer-path diagnostics and predictive intervals. These extensions are not implemented here.
+\input{references.tex}
+\clearpage
+\appendix
+\begingroup\small
+\section{Implementation and reproducibility}
+We implement AR/BVAR/direct forecasts and loss inference in \code{core.py}; publication masks, effective cutoffs and the seasonal benchmark in \code{v3.py}; annual transformations in \code{yoy.py}; origin masks and mixed-frequency nowcasts in \code{pipeline.py}; and source transformations in \code{sources.py}. Separate manifests distinguish annual forecasts from the monthly and nowcast exercises and bind them to source and estimator hashes.
+
+\section{Availability, convergence and declared evaluation diagnostics}
+\input{generated/availability.tex}
+\input{generated/convergence.tex}
+Convergence flags reflect our relative log-likelihood stopping check. Per-origin optimizer histories, the AR lag path and model residual tests are not available in the saved aggregate results. Unit-root and causal-identification diagnostics are not claimed as validation of this forecast-ranking exercise. The appendix records available diagnostics and fixed algorithms only.
+\section{Pandemic exclusion and resampling design}
+We exclude the specified pandemic-quarter window, without choosing a replacement window from results. Bridge comparisons match the remaining dates for each information month. Convergence-only and pandemic exclusions are distinct sensitivities; their samples must not be silently pooled or interpreted as independent robustness replications.
+
+We use paired circular error blocks, preserving model/benchmark alignment and the declared block lengths by frequency. Seed \Seed{} is fixed. Percentile limits apply to loss ratios and RMSE, not regression coefficients. The DM-HLN covariance rule and small-sample correction are those stated in the model section.
+\endgroup

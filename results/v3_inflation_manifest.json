@@ -1,0 +1,30 @@
+{
+  "analysis_id": "v3_inflation_f1c5f35f532ac95c",
+  "inputs": {
+    "data/processed/ea_headline.csv": "7916bf2b440945993cc823446c1cf1d2f71eea186181b357fc59b426898469d1",
+    "data/processed/ea_core.csv": "bb2c61d14ed63f592fc37a609a09c31c936c0596e4ae67e24a76d37c56f0eb5d",
+    "data/processed/ea_unemployment.csv": "5d57bf950836f7d8d6c2753ace2703e16c1c2a88745bf55c83bae66a06e2a546",
+    "data/processed/tr_headline.csv": "095d755658eb914d253110f86b313e714d01adc51684f6fd62438981b7c9cd9d",
+    "data/processed/tr_unemployment.csv": "940c8f8a15a528eb63734cc9bca01e49d05ce7b75a42eb2980b62a12856e7f9c"
+  },
+  "code": {
+    "src/inflation_forecast_nowcast/v3.py": "e8fd1b9ac4109510eabb616c30a170540d1b0feafa549bcc5228c4b7ba8e5d5c",
+    "src/inflation_forecast_nowcast/core.py": "dd5a4f44809f655663028af05ed6645a98ca6008aea9efb4761444d4ce324ba9",
+    "docs/V3_PROTOCOL.md": "84c505bb0d9629b90e7695d6e6c9d9e062ec337d5f3ff5e976b019539e85e34c"
+  },
+  "protocol_sha256": "84c505bb0d9629b90e7695d6e6c9d9e062ec337d5f3ff5e976b019539e85e34c",
+  "availability": "assumed EOM price t+1; unemployment t+2",
+  "latest_vintage": true,
+  "horizons": [
+    1,
+    3,
+    6,
+    12
+  ],
+  "forecast_rows": 13440,
+  "elapsed_seconds": 19.932598874962423,
+  "failures": [],
+  "paid_calls": 0,
+  "inherited_nowcast_manifest_sha256": "7134b7abf95a61e73ed24d464d4a28d194e536e5851d5e98554a2526409d5e5d",
+  "uncertainty": "loss-block12/draws499/seed20261007 unchanged; DM Bartlett h+11 with legacy retained"
+}
