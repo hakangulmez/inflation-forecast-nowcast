@@ -22,7 +22,7 @@ for row in contract["source"]:
         row["path"], hashlib.sha256((root / row["path"]).read_bytes()).hexdigest() == row["sha256"]
     )
 scores = pd.read_csv(root / "results/inflation_scores_yoy.csv")
-check("benchmarks", set(scores.benchmark) == {"RW", "AO"})
+check("benchmarks", set(scores.benchmark) == {"RW", "AO", "SeasonalMean"})
 check("horizons", set(scores.horizon) == {1, 3, 6, 12})
 check("common count", scores.n.eq(140).all())
 check("seasonal mean", "SeasonalMean" in set(scores.model))

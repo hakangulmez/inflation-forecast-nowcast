@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-08",
+  "source_commit": "38b8ed44ca41c8f851cf092be627ac0f6239017a",
+  "presentation_cleanup": {
+    "date": "2026-10-08",
+    "tested_candidate_commit": "ebb4f81f186fe2f2f0eb6a664c64a72ad41a2056",
+    "fresh_clone_setup": true,
+    "python_tests": 19,
+    "R_checks": "not applicable",
+    "lint_format_type": "passed",
+    "offline_synthetic_quick": "passed",
+    "aggregate_only_report_build": "passed; text, README and headline match fresh clone",
+    "final_editorial_overlay": "public aggregate audit corrected to include existing seasonal-mean benchmark; lint and audit repeated",
+    "empirical_estimation_calls": 0,
+    "empirical_source_refresh": false,
+    "paid_provider_calls": 0,
+    "scientific_files_hash_unchanged": 142,
+    "existing_numeric_macros_unchanged": 38,
+    "equation_blocks_unchanged": 10,
+    "PDFs": {
+      "policy_note": {
+        "pages": 2,
+        "sha256": "acfefb241f8f4173afee247cab405cf459473838616de03ce2967692168d5149",
+        "fresh_clone_text_equal": true,
+        "visually_checked": true
+      },
+      "technical_report": {
+        "pages": 13,
+        "sha256": "953178ab8807bb3a4075a18fa4040f3208b55db3068a1b89815f2457db85e6bb",
+        "fresh_clone_text_equal": true,
+        "visually_checked": true
+      }
+    },
+    "publication_scan": "exact credentials and heuristic scan; files and outgoing history checked; repeat immediately before push",
+    "data_redistributed": false,
+    "private_history_merged": false,
+    "MIT": true
+  }
+}
