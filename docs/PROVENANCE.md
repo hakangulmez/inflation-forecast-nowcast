@@ -1,6 +1,6 @@
 # Provenance and reproduction
 
-The concise README presents the empirical question and results. This document retains the research protocols, result lineage, version history, reproduction boundaries and Monte Carlo replay details. Source data remain governed by DATA.md.
+This document records the forecast vintages, target definitions, inference rules and limits of empirical reproduction. [Methods guide](METHODS.md) links the successive design records; source terms are in [DATA.md](../DATA.md).
 
 ## Empirical reruns
 
@@ -30,4 +30,4 @@ MIT code; data retain source terms and are not redistributed. Hakan Zeki Gülmez
 
 ## Public package reproduction boundary
 
-`make setup test lint quick` checks implementations and synthetic examples. `make policy-note report` rebuilds the checked-in result aggregates without raw data or credentials. `make all` remains the original unmasked empirical pipeline and overwrites output files; run it in a separate clone. Publication-masked re-estimation also requires exact source vintages and the earlier observation-level forecast pairs used for the HAC attribution calculation. Those pairs are not redistributed, so `make v3` is not advertised as a self-contained reconstruction of private run history. The empirical forecast code and complete aggregate diagnostics are included. No fresh empirical estimates were executed for publication.
+`make setup test lint quick` checks implementations and synthetic examples. `REPORT_OFFLINE=1 make report` rebuilds the technical paper from saved aggregates after the Tectonic cache is populated. `make policy-note`, `make figures`, `make readme-numbers` and `make v3-outputs` also regenerate the README and other presentation files from an older embedded template; use a separate clone for these builds to preserve the current editorial text. `make all` remains the original unmasked empirical pipeline and overwrites output files; run it in a separate clone. Publication-masked re-estimation also requires exact source vintages and the earlier observation-level forecast pairs used for the HAC attribution calculation. Those pairs are not redistributed, so `make v3` is not advertised as a self-contained reconstruction of private run history. The empirical forecast code and complete aggregate diagnostics are included. No fresh empirical estimates were executed for publication.

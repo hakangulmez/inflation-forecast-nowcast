@@ -1,4 +1,6 @@
-# M2 design — draft for review
+# Initial design — inflation forecasts and German GDP nowcasts
+
+Initial specification record; reader-facing wording revised 16 October 2026. The original monthly target below precedes the [year-on-year declaration](V2_TARGET.md) and [publication-delay protocol](V3_PROTOCOL.md).
 
 Question: Can simple regularized models improve inflation forecasts, and does monthly German information improve GDP nowcasts? This is a **latest-vintage pseudo-real-time** experiment, not a real-time-vintage evaluation. All transformations and publication-lag masks use information available at the simulated origin; parameter choices are fixed before evaluation.
 
@@ -8,4 +10,4 @@ Inflation: 100×monthly log change, horizons 1/3/6/12; expanding-window evaluati
 
 Germany: GDP 100×quarterly log change; IP/retail monthly log change, unemployment change and ESI level. Bridge uses observed within-quarter monthly predictors; U-MIDAS uses month-slot predictors; DFM handles missing observations through the state-space filter. Fixed monthly availability delays: IP/retail/unemployment 2 months; ESI 0; GDP 2 months after quarter end. Evaluate from 2012Q1 at quarter months 1/2/3 and month 4; GDP target is hidden at every origin. Training GDP only from released prior quarters. Report all quarters and excluding 2020Q1–2021Q2. The missing August 2026 IP observation remains NaN, never interpolated.
 
-Outputs: aggregate score/DM tables (CSV and Markdown), error heat map with bootstrap intervals in companion figure, nowcast score by information month with intervals, two-page policy note, four complete theory drafts, README/self-audit, offline synthetic quick and tests. Raw observations and individual forecasts stay private. Risks: revisions, assumed lags, short TR CPI base history, model convergence, structural breaks, overlapping forecast errors and pandemic leverage. If a source or model fails twice, record the failure and deliver the named minimum without pretending the missing component is complete.
+Outputs: aggregate score/DM tables (CSV and Markdown), error heat map with bootstrap intervals in companion figure, nowcast score by information month with intervals, two-page policy note, four complete theory drafts, README and source documentation, offline synthetic quick and tests. Raw observations and individual forecasts stay private. Risks: revisions, assumed lags, short TR CPI base history, model convergence, structural breaks, overlapping forecast errors and pandemic leverage. The initial failure rule recorded a source or model as incomplete after two failed attempts. Missing components are reported separately from completed outputs.

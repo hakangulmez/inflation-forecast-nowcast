@@ -1,12 +1,11 @@
-# Public publication checklist — 8 October 2026
+# Public release checks — 8 October 2026
 
-Public destination: hakangulmez/inflation-forecast-nowcast; main only, no force-push. Exact file allowlist: PUBLIC_FILES.txt.
+This is a record of the original release checks. It is not a set of instructions for a pending publication.
 
-- Allowlisted code, tests, documentation, aggregate results, report sources/PDFs and figures only.
-- No data/, .env, row-level forecasts, private caches, environments, fitted objects, databases, thesis material or private Git history.
-- Original code MIT; provider attribution and separate data terms in DATA.md.
-- Exact-key and offline heuristic scan of files and outgoing Git history immediately before push.
-- Fresh-clone setup, tests, lint/type/format, offline synthetic quick and aggregate-only PDF builds. No empirical estimation or acquisition during this publication task.
-- Main-only push and live README/image/PDF/file-hash verification.
+- The release contains code, tests, documentation, aggregate results, figures and report sources/PDFs.
+- Raw observations, fitted objects, credentials, private caches, environments, databases and private research history are excluded.
+- Original code retains its MIT licence; provider attribution and dataset terms are documented in [DATA.md](../DATA.md).
+- Release checks covered credential patterns, excluded paths, clean-clone setup, tests, lint, synthetic examples and aggregate report builds.
+- The public files and README, figure and PDF links were checked after publication. Detailed validation records, where distributed, identify the original checked snapshot.
 
-Executed checks recorded in PUBLICATION_VALIDATION.json.
+Subsequent documentation edits do not constitute new empirical estimates. The [methods guide](METHODS.md) and [provenance](PROVENANCE.md) describe the current analytical outputs and reproduction limits.
